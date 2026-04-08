@@ -1,70 +1,207 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 👨 DadGPT
 
-## Available Scripts
+### *Because some conversations are too important to leave to chance.*
 
-In the project directory, you can run:
+[![Made with React](https://img.shields.io/badge/Made%20with-React-61DAFB?style=flat-square&logo=react)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Backend-Node.js-339933?style=flat-square&logo=node.js)](https://nodejs.org/)
+[![OpenAI](https://img.shields.io/badge/Powered%20by-OpenAI-412991?style=flat-square&logo=openai)](https://openai.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
-### `npm start`
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 💭 The Story Behind DadGPT
 
-### `npm test`
+Not everyone grows up with a father figure to turn to — someone to ask the awkward questions, get a reality check from, or just hear "I'm proud of you" on a hard day.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+DadGPT was built for those moments.
 
-### `npm run build`
+Whether you never had that relationship, lost it too soon, or simply need a patient, non-judgmental presence at 2am when life feels heavy — this project is a small attempt to fill that space. It won't replace the real thing. But it'll be there, every time, ready to listen.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This is a personal project born out of genuine need. If it helps even one person feel a little less alone, it was worth building.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ✨ What It Does
 
-### `npm run eject`
+DadGPT is a **context-aware conversational AI assistant** that roleplays as a supportive, wise, and caring father figure. It's built with a **multi-turn conversation memory**, meaning it actually remembers what you've said earlier in the conversation — just like a real person would.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Key behaviours:
+- Gives grounded, calm, no-nonsense advice
+- Offers emotional support without being preachy
+- Remembers context across the conversation
+- Feels warm and human, not robotic
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🛠️ Tech Stack
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| Layer | Technology | Purpose |
+|---|---|---|
+| **Frontend** | React (Create React App) | UI & chat interface |
+| **Backend** | Node.js + Express | API server & middleware |
+| **AI** | OpenAI API (`gpt-3.5-turbo` / `gpt-4`) | Language model |
+| **Styling** | CSS3 | Custom component styles |
+| **State** | React Hooks (`useState`, `useEffect`) | Conversation management |
+| **HTTP** | Fetch API / Axios | Client-server communication |
 
-## Learn More
+### Key Files
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+DadGPT/
+├── server.js          # Express backend — handles OpenAI API calls & prompt engineering
+├── App.js             # Root React component
+├── ChatScreen.js      # Main chat UI — multi-turn conversation rendering
+├── Onboarding.js      # Welcome / intro flow for new users
+├── App.css            # Global styles
+├── index.css          # Base CSS resets
+└── index.js           # React entry point
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🚀 Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Prerequisites
 
-### Analyzing the Bundle Size
+Before you begin, make sure you have the following installed:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+- An [OpenAI API Key](https://platform.openai.com/api-keys) — you'll need a free or paid account
 
-### Making a Progressive Web App
+### 1. Clone the Repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+git clone https://github.com/HamishKatyal/DadGPT.git
+cd DadGPT
+```
 
-### Advanced Configuration
+### 2. Install Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npm install
+```
 
-### Deployment
+### 3. Set Up Your Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Create a `.env` file in the root of the project:
 
-### `npm run build` fails to minify
+```bash
+touch .env
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Add your OpenAI API key:
+
+```env
+OPENAI_API_KEY=your_openai_api_key_here
+```
+
+> ⚠️ **Never commit your `.env` file to GitHub.** Make sure `.env` is listed in your `.gitignore`.
+
+### 4. Start the Backend Server
+
+```bash
+node server.js
+```
+
+The Express server will start (default: `http://localhost:3001`).
+
+### 5. Start the React Frontend
+
+Open a **new terminal window** and run:
+
+```bash
+npm start
+```
+
+The app will open at `http://localhost:3000`.
+
+---
+
+## 🔑 Environment Variables
+
+| Variable | Required | Description |
+|---|---|---|
+| `OPENAI_API_KEY` | ✅ Yes | Your secret key from [OpenAI Platform](https://platform.openai.com/api-keys) |
+
+---
+
+## 💡 How It Works
+
+DadGPT uses **prompt engineering** to set the personality and tone of the AI at the system level. When you send a message:
+
+1. Your message is added to a **conversation history array** (multi-turn memory)
+2. The full history is sent to the OpenAI API with every request — this is what gives the AI "memory"
+3. The AI responds in character as a warm, supportive father figure
+4. The response is rendered in the chat UI
+
+The system prompt is the heart of the experience — it instructs the model on *how* to behave, not just *what* to say.
+
+---
+
+## 🧩 Enhancements & Roadmap
+
+Here are improvements worth adding to make DadGPT more polished and production-ready:
+
+- [ ] **`.env` validation on startup** — show a clear error if `OPENAI_API_KEY` is missing
+- [ ] **Loading indicator** — show a typing animation while the AI is thinking
+- [ ] **Error handling UI** — friendly message if the API call fails (rate limit, network error, etc.)
+- [ ] **Conversation persistence** — save chats to `localStorage` so they survive page refresh
+- [ ] **Clear conversation button** — let users start fresh
+- [ ] **Mobile-responsive styling** — improve layout on small screens
+- [ ] **Streaming responses** — use OpenAI's streaming API to display the reply word-by-word
+- [ ] **Dark mode** — system-level preference detection
+- [ ] **Deploy to Vercel / Render** — make it publicly accessible
+- [ ] **Rate limiting on the server** — protect your API key from abuse if deployed publicly
+
+---
+
+## 🔒 A Note on Security
+
+If you plan to deploy this publicly:
+
+- **Never expose your OpenAI API key on the frontend.** All API calls must go through your backend (`server.js`).
+- Consider adding **rate limiting** (e.g., with the `express-rate-limit` package) to prevent abuse.
+- Use environment variables on your hosting platform (Vercel, Render, Railway, etc.) rather than a `.env` file.
+
+---
+
+## 📦 Available Scripts
+
+| Command | Description |
+|---|---|
+| `npm start` | Run the React frontend in development mode |
+| `node server.js` | Start the Express backend server |
+| `npm run build` | Build the frontend for production |
+| `npm test` | Run the test suite |
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature suggestions are warmly welcome. If you've built something similar, improved it, or just want to talk about it — open an issue or a PR.
+
+1. Fork the repo
+2. Create a branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m 'Add your feature'`
+4. Push and open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE) — use it, share it, build on it.
+
+---
+
+<div align="center">
+
+*Built with care by [Hamish Katyal](https://github.com/HamishKatyal)*
+
+*For anyone who needed to hear "you're going to be okay" and didn't have someone to say it.*
+
+</div>
